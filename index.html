@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chicmedia — Creativity for Transformation</title>
+<meta name="description" content="Chicmedia là công ty truyền thông tích hợp tại Hà Nội. Đối tác chiến lược của VTVcab, Top 3 MCN Shopee & TikTok, mạng lưới 500+ KOL/KOC và hệ sinh thái Chicgo, Checkevent, Chicstay, Chiko, Chichouse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Be+Vietnam+Pro:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#08080A;
+  --carbon:#111114;
+  --steel:#1D1D22;
+  --line:rgba(255,255,255,.13);
+  --chalk:#FFFFFF;
+  --ash:rgba(255,255,255,.56);
+  --ash-dim:rgba(255,255,255,.34);
+  --magenta:#FF008C;
+  --ivory:#F4F2ED;
+
+  --display:'Archivo',system-ui,sans-serif;
+  --body:'Be Vietnam Pro',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+
+  --pad:clamp(20px,4.5vw,72px);
+  --ease:cubic-bezier(.22,.8,.26,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--void);color:var(--chalk);
+  font-family:var(--body);font-size:16px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--magenta);outline-offset:4px;border-radius:3px}
+::selection{background:var(--magenta);color:#fff}
+
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--pad)}
+
+.eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ash-dim);
+}
+.h-display{
+  font-family:var(--display);font-weight:800;
+  font-variation-settings:'wdth' 92;
+  letter-spacing:-.035em;line-height:.94;
+  text-wrap:balance;
+}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,8,10,.78);backdrop-filter:blur(18px) saturate(1.4);
+  border-bottom:1px solid var(--line);
+}
+.nav-in{
+  max-width:1320px;margin:0 auto;padding:0 var(--pad);
+  height:66px;display:flex;align-items:center;gap:34px;
+}
+.brand{
+  font-family:var(--display);font-weight:900;font-variation-settings:'wdth' 78;
+  font-size:19px;letter-spacing:.01em;text-transform:uppercase;margin-right:auto;
+}
+.brand i{font-style:normal;color:var(--magenta)}
+.nav-links{display:flex;gap:26px;font-size:14px;color:var(--ash)}
+.nav-links a{transition:color .2s var(--ease)}
+.nav-links a:hover{color:var(--chalk)}
+.lang{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;
+  padding:6px 12px;color:var(--ash-dim);transition:.2s var(--ease);
+}
+.lang button[aria-pressed="true"]{background:var(--chalk);color:var(--void)}
+.nav-cta{
+  border:1px solid var(--chalk);border-radius:999px;padding:8px 18px;
+  font-size:13.5px;font-weight:600;transition:.22s var(--ease);white-space:nowrap;
+}
+.nav-cta:hover{background:var(--magenta);border-color:var(--magenta)}
+@media(max-width:1000px){.nav-links{display:none}}
+
+/* ============ HERO ============ */
+.hero{padding:clamp(64px,10vw,132px) 0 clamp(30px,4vw,52px);position:relative}
+.hero::after{
+  content:"";position:absolute;top:-30%;right:-8%;width:52vw;height:52vw;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,0,140,.16),transparent 62%);
+}
+.hero-in{position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,7.3vw,104px);margin:22px 0 26px;max-width:17ch}
+.hero h1 i{font-style:normal;color:var(--magenta)}
+.hero-lede{font-size:clamp(16px,1.55vw,20px);color:var(--ash);max-width:62ch}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:999px;font-weight:600;font-size:15px;
+  transition:.25s var(--ease);
+}
+.btn-solid{background:var(--magenta);color:#fff}
+.btn-solid:hover{background:var(--chalk);color:var(--void)}
+.btn-line{border:1px solid var(--line);color:var(--chalk)}
+.btn-line:hover{border-color:var(--chalk);background:rgba(255,255,255,.05)}
+.btn .arw{transition:transform .25s var(--ease)}
+.btn:hover .arw{transform:translateX(4px)}
+
+/* ============ TAGLINE MARQUEE ============ */
+.tag-band{border-block:1px solid var(--line);padding:15px 0;overflow:hidden;margin-top:clamp(40px,5vw,70px)}
+.tag-track{display:flex;gap:56px;white-space:nowrap;width:max-content;animation:slide 34s linear infinite}
+.tag-track span{
+  font-family:var(--display);font-weight:800;font-variation-settings:'wdth' 118;
+  font-size:clamp(15px,1.5vw,19px);letter-spacing:.24em;text-transform:uppercase;color:var(--ash-dim);
+}
+.tag-track span::after{content:"\25C6";margin-left:56px;color:var(--magenta);font-size:9px;vertical-align:middle}
+@keyframes slide{to{transform:translateX(-50%)}}
+.tag-band:hover .tag-track{animation-play-state:paused}
+
+/* ============ SCALE ============ */
+.scale{padding:clamp(56px,7vw,104px) 0}
+.scale-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(max-width:900px){.scale-grid{grid-template-columns:repeat(2,1fr)}}
+.stat{padding:34px 28px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+@media(max-width:900px){
+  .stat:nth-child(2n){border-right:none}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+.stat-n{
+  font-family:var(--display);font-weight:800;font-variation-settings:'wdth' 84;
+  font-size:clamp(38px,4.4vw,60px);letter-spacing:-.045em;line-height:1;
+}
+.stat:first-child .stat-n{color:var(--magenta)}
+.stat-l{font-size:13.5px;color:var(--ash);margin-top:12px;line-height:1.45}
+.scale-note{font-size:12px;color:var(--ash-dim);margin-top:18px;font-family:var(--mono);letter-spacing:.02em}
+
+/* ============ SECTION ============ */
+.sec{padding:clamp(60px,8vw,120px) 0;border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:52px}
+@media(max-width:900px){.sec-head{grid-template-columns:1fr;gap:20px;align-items:start}}
+.sec-head h2{font-size:clamp(30px,4.4vw,60px);margin-top:14px}
+.sec-head p{color:var(--ash);font-size:16.5px;max-width:52ch}
+
+/* ============ SERVICE ROWS ============ */
+.rows{border-top:1px solid var(--line)}
+.row{border-bottom:1px solid var(--line)}
+.row-btn{
+  width:100%;display:grid;grid-template-columns:64px 1fr auto;gap:24px;align-items:center;
+  padding:28px 0;text-align:left;transition:padding .3s var(--ease);
+}
+.row-idx{font-family:var(--mono);font-size:12px;color:var(--ash-dim);letter-spacing:.06em}
+.row-name{
+  font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 96;
+  font-size:clamp(22px,2.9vw,40px);letter-spacing:-.03em;line-height:1.06;
+  transition:color .25s var(--ease);
+}
+.row:hover .row-name,.row[data-open="true"] .row-name{color:var(--magenta)}
+.row:hover .row-btn{padding-left:14px}
+.row-plus{
+  position:relative;width:36px;height:36px;border:1px solid var(--line);border-radius:999px;
+  display:grid;place-items:center;transition:.3s var(--ease);
+}
+.row-plus::before,.row-plus::after{content:"";position:absolute;background:var(--chalk);transition:.3s var(--ease)}
+.row-plus::before{width:11px;height:1.5px}
+.row-plus::after{width:1.5px;height:11px}
+.row[data-open="true"] .row-plus{background:var(--magenta);border-color:var(--magenta);transform:rotate(135deg)}
+.row-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .42s var(--ease)}
+.row[data-open="true"] .row-panel{grid-template-rows:1fr}
+.row-panel-in{overflow:hidden}
+.row-body{display:grid;grid-template-columns:64px 1fr 1fr;gap:24px;padding:0 0 34px}
+@media(max-width:820px){
+  .row-body{grid-template-columns:1fr;gap:16px}
+  .row-body .spacer{display:none}
+  .row-btn{grid-template-columns:44px 1fr auto;gap:14px}
+}
+.row-desc{color:var(--ash);font-size:15.5px;max-width:46ch}
+.row-list{list-style:none;display:grid;gap:9px;font-size:14.5px;align-content:start}
+.row-list li{display:flex;gap:11px;color:var(--ash)}
+.row-list li::before{content:"\2014";color:var(--magenta);flex:0 0 auto}
+
+/* ============ ECOSYSTEM RAIL ============ */
+.rail{
+  display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding-bottom:16px;margin-inline:calc(var(--pad)*-1);padding-inline:var(--pad);
+  scrollbar-width:thin;scrollbar-color:var(--steel) transparent;
+}
+.prod{
+  scroll-snap-align:start;flex:0 0 clamp(272px,29vw,346px);
+  background:var(--carbon);border:1px solid var(--line);border-radius:18px;
+  padding:28px 26px 26px;display:flex;flex-direction:column;
+  transition:.3s var(--ease);
+}
+.prod:hover{background:var(--steel);border-color:rgba(255,255,255,.28);transform:translateY(-5px)}
+.prod-tag{
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--magenta);margin-bottom:auto;
+}
+.prod h3{
+  font-family:var(--display);font-weight:800;font-variation-settings:'wdth' 88;
+  font-size:32px;letter-spacing:-.03em;margin:56px 0 10px;
+}
+.prod > p{font-size:14.5px;color:var(--ash);margin-bottom:20px}
+.prod ul{list-style:none;display:grid;gap:7px;font-size:13.5px;color:var(--ash-dim);border-top:1px solid var(--line);padding-top:16px}
+.prod li{display:flex;gap:9px}
+.prod li::before{content:"\203A";color:var(--magenta)}
+
+/* ============ BENEFITS ============ */
+.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(max-width:940px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ben-grid{grid-template-columns:1fr}}
+.ben{background:var(--void);padding:30px 26px 34px;transition:background .3s var(--ease)}
+.ben:hover{background:var(--carbon)}
+.ben-n{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--magenta);letter-spacing:.1em}
+.ben h4{font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 96;font-size:19px;letter-spacing:-.01em;margin:18px 0 9px;line-height:1.2}
+.ben p{font-size:14px;color:var(--ash)}
+.foot-note{font-family:var(--mono);font-size:11px;color:var(--ash-dim);margin-top:16px;letter-spacing:.02em}
+
+/* ============ PROCESS ============ */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+@media(max-width:900px){.proc{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.proc{grid-template-columns:1fr}}
+.step{border-top:2px solid var(--line);padding-top:20px}
+.step:first-child{border-top-color:var(--magenta)}
+.step-n{font-family:var(--mono);font-size:11px;color:var(--ash-dim);letter-spacing:.1em}
+.step h4{font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 92;font-size:18px;margin:12px 0 8px;letter-spacing:-.01em}
+.step p{font-size:14px;color:var(--ash)}
+
+/* ============ KOC MARQUEE ============ */
+.koc-band{border-block:1px solid var(--line);padding:20px 0;overflow:hidden}
+.koc-track{display:flex;gap:14px;width:max-content;animation:slide 46s linear infinite}
+.koc-band:hover .koc-track{animation-play-state:paused}
+.koc-chip{
+  border:1px solid var(--line);border-radius:999px;padding:9px 20px;
+  font-size:14px;white-space:nowrap;color:var(--ash);transition:.25s var(--ease);
+}
+.koc-chip:hover{background:var(--magenta);border-color:var(--magenta);color:#fff}
+.koc-chip b{color:var(--chalk);font-weight:600}
+
+/* ============ GMV ============ */
+.gmv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.gmv{background:var(--void);padding:28px 24px}
+.gmv-when{font-family:var(--mono);font-size:11px;color:var(--ash-dim);letter-spacing:.08em}
+.gmv-v{font-family:var(--display);font-weight:800;font-variation-settings:'wdth' 80;font-size:clamp(26px,2.6vw,34px);letter-spacing:-.04em;margin:14px 0 4px;line-height:1}
+.gmv-u{font-size:13px;color:var(--ash);margin-bottom:14px}
+.gmv-views{font-family:var(--mono);font-size:12px;color:var(--magenta);letter-spacing:.04em}
+
+/* ============ FAQ ============ */
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;display:flex;gap:20px;align-items:flex-start;justify-content:space-between;padding:24px 0;text-align:left;font-size:clamp(16px,1.5vw,19px);font-weight:600;transition:color .2s var(--ease)}
+.faq-q:hover{color:var(--magenta)}
+.faq-mark{font-family:var(--mono);color:var(--magenta);flex:0 0 auto;transition:transform .3s var(--ease)}
+.faq-item[data-open="true"] .faq-mark{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease)}
+.faq-item[data-open="true"] .faq-a{grid-template-rows:1fr}
+.faq-a-in{overflow:hidden}
+.faq-a p{color:var(--ash);font-size:15px;max-width:78ch;padding-bottom:26px}
+
+/* ============ TALK ============ */
+.talk{background:var(--ivory);color:var(--void);border-radius:26px;padding:clamp(44px,6vw,84px) clamp(26px,4vw,64px);margin:clamp(56px,7vw,100px) 0}
+.talk h2{font-size:clamp(32px,5.2vw,74px);max-width:16ch;margin:14px 0 18px}
+.talk-sub{color:rgba(8,8,10,.6);font-size:15px;max-width:54ch;margin-bottom:36px}
+.talk-links{display:flex;flex-wrap:wrap;gap:14px 40px;align-items:center}
+.talk-link{font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 92;font-size:clamp(18px,2vw,26px);letter-spacing:-.02em;border-bottom:2px solid rgba(8,8,10,.2);padding-bottom:3px;transition:.25s var(--ease)}
+.talk-link:hover{color:var(--magenta);border-bottom-color:var(--magenta)}
+
+/* ============ FOOTER ============ */
+.foot{border-top:1px solid var(--line);padding:clamp(48px,6vw,80px) 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:44px}
+@media(max-width:1000px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px}}
+@media(max-width:620px){.foot-grid{grid-template-columns:1fr;gap:32px}}
+.foot h5{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ash-dim);margin-bottom:20px}
+.legal-name{font-family:var(--display);font-weight:700;font-variation-settings:'wdth' 90;font-size:19px;line-height:1.28;letter-spacing:-.015em;margin-bottom:8px;max-width:32ch}
+.legal-en{font-size:13px;color:var(--ash-dim);margin-bottom:20px;font-style:italic}
+.legal-row{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.legal-row dt{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ash-dim);flex:0 0 106px;padding-top:4px}
+.legal-row dd{color:var(--chalk);line-height:1.5}
+.foot-list{list-style:none;display:grid;gap:11px;font-size:14.5px;color:var(--ash)}
+.foot-list a:hover{color:var(--magenta)}
+.foot-bot{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 26px;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ash-dim);text-transform:uppercase}
+.foot-bot .push{margin-left:auto}
+
+/* ============ REVEAL ============ */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand">Chic<i>media</i></a>
+    <div class="nav-links">
+      <a href="#services" data-i18n="nav.svc">Dịch vụ</a>
+      <a href="#ecosystem" data-i18n="nav.eco">Hệ sinh thái</a>
+      <a href="#network" data-i18n="nav.net">Mạng lưới</a>
+      <a href="#process" data-i18n="nav.proc">Quy trình</a>
+      <a href="#work" data-i18n="nav.work">Dự án</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language / Ngôn ngữ">
+      <button type="button" data-lang="vi" aria-pressed="true">VI</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Liên hệ</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Công ty CP Truyền thông và Giải trí Chicmedia · Hà Nội, Việt Nam</p>
+    <h1 class="h-display" data-i18n="hero.h1">Chicmedia là công ty truyền thông tích hợp cho <i>thế hệ trẻ Việt Nam</i>.</h1>
+    <p class="hero-lede" data-i18n="hero.lede">Chúng tôi kết nối thương hiệu với khách hàng bằng ý tưởng sáng tạo và chiến lược truyền thông đa kênh — từ branding, social, performance, PR, livestream, sản xuất video đến hệ sinh thái sản phẩm giải trí của riêng mình.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-solid"><span data-i18n="hero.cta1">Xem dịch vụ</span> <span class="arw">→</span></a>
+      <a href="#ecosystem" class="btn btn-line" data-i18n="hero.cta2">Hệ sinh thái sản phẩm</a>
+    </div>
+  </div>
+  <div class="tag-band" aria-hidden="true">
+    <div class="tag-track">
+      <span>Creativity for Transformation</span><span>Endless Creativity</span><span>Efficiency</span><span>Professionalism</span><span>Partnership</span>
+      <span>Creativity for Transformation</span><span>Endless Creativity</span><span>Efficiency</span><span>Professionalism</span><span>Partnership</span>
+    </div>
+  </div>
+</header>
+
+<section class="scale">
+  <div class="wrap rv">
+    <div class="scale-grid">
+      <div class="stat">
+        <div class="stat-n">20B+</div>
+        <p class="stat-l" data-i18n="stat.1">Lượt xem của mạng lưới TikTok chính thức VTVcab trong năm 2024</p>
+      </div>
+      <div class="stat">
+        <div class="stat-n">60+</div>
+        <p class="stat-l" data-i18n="stat.2">Kênh truyền thông trong hệ thống: fanpage, TikTok, YouTube, Zalo OA</p>
+      </div>
+      <div class="stat">
+        <div class="stat-n">500+</div>
+        <p class="stat-l" data-i18n="stat.3">KOL/KOC in-house, phủ mọi ngành hàng và nhóm sản phẩm</p>
+      </div>
+      <div class="stat">
+        <div class="stat-n">Top 3</div>
+        <p class="stat-l" data-i18n="stat.4">MCN trên Shopee và TikTok tại thị trường Việt Nam</p>
+      </div>
+    </div>
+    <p class="scale-note" data-i18n="stat.note">Nguồn: Chicmedia Company Profile 2025 · Đối tác chiến lược chính thức của VTVcab</p>
+  </div>
+</section>
+
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">02 — Core Services</p>
+        <h2 class="h-display" data-i18n="svc.h2">Truyền thông tích hợp, làm trọn gói trong một nhà.</h2>
+      </div>
+      <p data-i18n="svc.lede">Chín hạng mục dịch vụ, từ chiến lược đến thực thi. Bạn không phải ghép nhiều nhà thầu: chiến lược, sản xuất, phân phối và đo lường đều nằm cùng một đội.</p>
+    </div>
+
+    <div class="rows rv">
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S01</span>
+          <span class="row-name" data-i18n="s1.name">Branding</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s1.desc">Phát triển và định vị thương hiệu toàn diện. Không chỉ là logo và bảng màu — là cách khách hàng nhận ra và ghi nhớ bạn.</p>
+          <ul class="row-list">
+            <li data-i18n="s1.l1">Nghiên cứu thị trường và định vị thương hiệu</li>
+            <li data-i18n="s1.l2">Hệ thống nhận diện hình ảnh và giọng nói thương hiệu</li>
+            <li data-i18n="s1.l3">Brand guidelines và bộ tài sản thương hiệu</li>
+            <li data-i18n="s1.l4">Kiến trúc thương hiệu cho hệ sinh thái nhiều sản phẩm</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S02</span>
+          <span class="row-name" data-i18n="s2.name">Social Media</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s2.desc">Xây dựng và vận hành kênh mạng xã hội với nội dung sáng tạo, tạo tương tác thật chứ không chỉ lượt xem.</p>
+          <ul class="row-list">
+            <li data-i18n="s2.l1">TikTok, Facebook, Instagram, YouTube, Zalo OA, Website</li>
+            <li data-i18n="s2.l2">Content plan theo tháng, sản xuất và đăng tải trọn gói</li>
+            <li data-i18n="s2.l3">Bắt trend và sản xuất nhanh trong 24–48 giờ</li>
+            <li data-i18n="s2.l4">Quản trị cộng đồng và xử lý khủng hoảng</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S03</span>
+          <span class="row-name" data-i18n="s3.name">Performance Marketing</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s3.desc">Chiến dịch quảng cáo dựa trên dữ liệu, chạy đa nền tảng, đo bằng con số bạn kiểm chứng được.</p>
+          <ul class="row-list">
+            <li data-i18n="s3.l1">Meta Ads, TikTok Ads, Google Ads, Shopee Ads</li>
+            <li data-i18n="s3.l2">Thiết lập tracking, dashboard và báo cáo định kỳ</li>
+            <li data-i18n="s3.l3">A/B test creative và tối ưu ngân sách theo tuần</li>
+            <li data-i18n="s3.l4">Tối ưu phễu từ hiển thị đến chuyển đổi và doanh thu</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S04</span>
+          <span class="row-name" data-i18n="s4.name">PR &amp; Đa kênh báo chí</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s4.desc">Chiến lược PR chuyên nghiệp, nâng hình ảnh thương hiệu và đưa thông điệp đến đúng nhóm công chúng.</p>
+          <ul class="row-list">
+            <li data-i18n="s4.l1">Dịch vụ PR đa kênh báo chí</li>
+            <li data-i18n="s4.l2">Tiếp cận hệ thống kênh VTVcab với vai trò đối tác chiến lược</li>
+            <li data-i18n="s4.l3">Thông cáo báo chí, bài phỏng vấn, tuyến bài chuyên đề</li>
+            <li data-i18n="s4.l4">Bảo vệ hình ảnh thương hiệu và xử lý thông tin sai lệch</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S05</span>
+          <span class="row-name" data-i18n="s5.name">Livestream &amp; Affiliate</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s5.desc">Xây chiến lược và vận hành livestream bán hàng chuyên nghiệp trên sàn thương mại điện tử. Mạnh nhất ở công nghệ, gia dụng và mẹ &amp; bé.</p>
+          <ul class="row-list">
+            <li data-i18n="s5.l1">Vận hành và tối ưu affiliate trên TikTok Shop và Shopee</li>
+            <li data-i18n="s5.l2">Lên kịch bản, điều phối host và kỹ thuật cho từng phiên</li>
+            <li data-i18n="s5.l3">Đào tạo và phát triển đội ngũ livestream cho nhãn hàng</li>
+            <li data-i18n="s5.l4">Top 3 MCN trên Shopee và TikTok</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S06</span>
+          <span class="row-name" data-i18n="s6.name">Sản xuất Video</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s6.desc">Đội sáng tạo và sản xuất nội bộ, thiết bị hiện đại, quy trình chuyên nghiệp. Từ concept đến bản final.</p>
+          <ul class="row-list">
+            <li data-i18n="s6.l1">TVC, phim doanh nghiệp, podcast, talkshow</li>
+            <li data-i18n="s6.l2">Video ngắn cho TikTok, Reels, Shorts</li>
+            <li data-i18n="s6.l3">Xây kênh trọn gói cho thương hiệu</li>
+            <li data-i18n="s6.l4">Phát triển concept, quay dựng và hậu kỳ</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S07</span>
+          <span class="row-name" data-i18n="s7.name">Cho thuê Studio</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s7.desc">Hệ thống studio đầy đủ thiết bị quay, ánh sáng, âm thanh, đường truyền ổn định và nhân sự vận hành chuyên nghiệp.</p>
+          <ul class="row-list">
+            <li data-i18n="s7.l1">Studio chuyên nghiệp, trang thiết bị hiện đại</li>
+            <li data-i18n="s7.l2">Giải pháp trọn gói từ concept đến sản xuất</li>
+            <li data-i18n="s7.l3">Không gian linh hoạt cho mọi nhu cầu livestream</li>
+            <li data-i18n="s7.l4">Chụp ảnh và quay video sản phẩm, tối ưu cho Shopee, Lazada, TikTok</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S08</span>
+          <span class="row-name" data-i18n="s8.name">Booking KOL/KOC</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s8.desc">Mạng lưới hơn 500 KOC/KOL in-house, phù hợp với mọi ngành hàng, lĩnh vực và nhóm sản phẩm.</p>
+          <ul class="row-list">
+            <li data-i18n="s8.l1">Kết nối thương hiệu với đúng nhóm KOC</li>
+            <li data-i18n="s8.l2">KOC in-house: Veeboong 367.9K, Thu Trà 210.6K người theo dõi</li>
+            <li data-i18n="s8.l3">Booking review, seeding và phiên livestream</li>
+            <li data-i18n="s8.l4">Đào tạo và phát triển gương mặt mới</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+      <article class="row" data-open="false">
+        <button class="row-btn" type="button" aria-expanded="false">
+          <span class="row-idx">S09</span>
+          <span class="row-name" data-i18n="s9.name">Mạng lưới VTVcab</span>
+          <span class="row-plus" aria-hidden="true"></span>
+        </button>
+        <div class="row-panel"><div class="row-panel-in"><div class="row-body">
+          <span class="spacer"></span>
+          <p class="row-desc" data-i18n="s9.desc">Chicmedia là đối tác chiến lược chính thức của VTVcab. Thông điệp của bạn tiếp cận tệp khán giả rộng với chi phí tối ưu.</p>
+          <ul class="row-list">
+            <li data-i18n="s9.l1">13 page tin tức &amp; giải trí — 12 triệu người theo dõi</li>
+            <li data-i18n="s9.l2">06 kênh trong hệ thống — 2,6 triệu subscriber, 30 triệu view/tháng</li>
+            <li data-i18n="s9.l3">Hơn 400 tài khoản MCN — khoảng 14 triệu follower, 30 tỷ view hashtag</li>
+            <li data-i18n="s9.l4">Fanpage VTVcab - News 1,3 triệu và VTVcab 722K người theo dõi</li>
+          </ul>
+        </div></div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="ecosystem">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">03 — Owned Ecosystem</p>
+        <h2 class="h-display" data-i18n="eco.h2">Năm sản phẩm của riêng chúng tôi.</h2>
+      </div>
+      <p data-i18n="eco.lede">Chicmedia không chỉ chạy chiến dịch trên kênh của người khác. Chúng tôi tự xây kênh — năm sản phẩm phục vụ đúng một tệp: người trẻ đô thị Việt Nam.</p>
+    </div>
+    <div class="rail rv">
+
+      <article class="prod">
+        <span class="prod-tag" data-i18n="p1.tag">Ứng dụng · Khám phá địa điểm</span>
+        <h3>Chicgo</h3>
+        <p data-i18n="p1.desc">Ứng dụng khám phá địa điểm bằng AI. Trả lời câu hỏi khó nhất của người trẻ: tối nay đi đâu?</p>
+        <ul>
+          <li data-i18n="p1.l1">Gợi ý theo tâm trạng, ngân sách, khoảng cách</li>
+          <li data-i18n="p1.l2">Tự lên lịch trình cả buổi từ một câu hỏi</li>
+          <li data-i18n="p1.l3">Bản đồ hidden gems chưa đông khách</li>
+          <li data-i18n="p1.l4">Địa điểm được đội BD xác minh trước khi lên app</li>
+        </ul>
+      </article>
+
+      <article class="prod">
+        <span class="prod-tag" data-i18n="p2.tag">Nền tảng · Sự kiện giải trí</span>
+        <h3>Checkevent</h3>
+        <p data-i18n="p2.desc">Nền tảng khám phá và bán vé sự kiện giải trí: concert, đêm nhạc, workshop, chợ phiên.</p>
+        <ul>
+          <li data-i18n="p2.l1">Lịch sự kiện theo thành phố, cập nhật hằng ngày</li>
+          <li data-i18n="p2.l2">Nhắc mở bán vé và giữ chỗ sớm</li>
+          <li data-i18n="p2.l3">Trang bán vé và check-in cho ban tổ chức</li>
+          <li data-i18n="p2.l4">Gói truyền thông đi kèm cho sự kiện</li>
+        </ul>
+      </article>
+
+      <article class="prod">
+        <span class="prod-tag" data-i18n="p3.tag">Nền tảng · Lưu trú</span>
+        <h3>Chicstay</h3>
+        <p data-i18n="p3.desc">Đặt chỗ ở cho những chuyến đi ngắn: homestay, khách sạn, camping, villa nhóm.</p>
+        <ul>
+          <li data-i18n="p3.l1">Đặt phòng phút chót, gần điểm đang chơi</li>
+          <li data-i18n="p3.l2">Combo ở + sự kiện đi cùng Checkevent</li>
+          <li data-i18n="p3.l3">Chỗ ở tuyển chọn theo gu, hình thật</li>
+          <li data-i18n="p3.l4">Ưu tiên nhóm bạn và cặp đôi</li>
+        </ul>
+      </article>
+
+      <article class="prod">
+        <span class="prod-tag" data-i18n="p4.tag">Phần cứng · Robot dịch vụ AI</span>
+        <h3>Chiko</h3>
+        <p data-i18n="p4.desc">Robot dịch vụ AI cho nhà hàng, quán cà phê, khách sạn và bệnh viện. Giải bài toán thiếu người phục vụ.</p>
+        <ul>
+          <li data-i18n="p4.l1">Bưng bê, dẫn khách, thu dọn theo lộ trình tự động</li>
+          <li data-i18n="p4.l2">Tương tác giọng nói tiếng Việt</li>
+          <li data-i18n="p4.l3">Lắp đặt, huấn luyện bản đồ, bảo trì tại chỗ</li>
+          <li data-i18n="p4.l4">Dành cho chuỗi F&amp;B và nhà phân phối B2B</li>
+        </ul>
+      </article>
+
+      <article class="prod">
+        <span class="prod-tag" data-i18n="p5.tag">Đội ngũ · Sản xuất nội dung</span>
+        <h3>Chichouse</h3>
+        <p data-i18n="p5.desc">Đội sản xuất nội dung và phát triển gương mặt trẻ. Nơi câu chuyện của cả hệ sinh thái được kể.</p>
+        <ul>
+          <li data-i18n="p5.l1">Sản xuất video ngắn cho TikTok, Reels, Shorts</li>
+          <li data-i18n="p5.l2">Đào tạo và phát triển host, MC, KOC</li>
+          <li data-i18n="p5.l3">Vận hành kênh trọn gói cho thương hiệu</li>
+          <li data-i18n="p5.l4">Nhận sản xuất cho đối tác ngoài hệ sinh thái</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="network">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">04 — KOL/KOC Network</p>
+        <h2 class="h-display" data-i18n="koc.h2">Hơn 500 gương mặt, phủ mọi ngành hàng.</h2>
+      </div>
+      <p data-i18n="koc.lede">Mạng lưới KOC/KOL in-house do Chicmedia trực tiếp quản lý và đào tạo. Chọn đúng người, không phải chọn người đắt nhất.</p>
+    </div>
+  </div>
+  <div class="koc-band rv" aria-hidden="true">
+    <div class="koc-track">
+      <span class="koc-chip"><b>Diễm My 9X</b></span>
+      <span class="koc-chip"><b>Vũ Thị Khánh Huyền</b></span>
+      <span class="koc-chip"><b>Trang Rừng</b></span>
+      <span class="koc-chip"><b>Bino Chém Tiếng Anh</b></span>
+      <span class="koc-chip"><b>Táo</b></span>
+      <span class="koc-chip"><b>Veeboong</b> · 367.9K</span>
+      <span class="koc-chip"><b>Nguyễn Hữu Trí</b></span>
+      <span class="koc-chip"><b>Huỳnh Duy Khương</b></span>
+      <span class="koc-chip"><b>Lê Anh Nuôi</b></span>
+      <span class="koc-chip"><b>Blingbabi</b></span>
+      <span class="koc-chip"><b>Hà Cooking</b></span>
+      <span class="koc-chip"><b>Hoàng Thị Thu Trà</b> · 210.6K</span>
+      <span class="koc-chip"><b>Diễm My 9X</b></span>
+      <span class="koc-chip"><b>Vũ Thị Khánh Huyền</b></span>
+      <span class="koc-chip"><b>Trang Rừng</b></span>
+      <span class="koc-chip"><b>Bino Chém Tiếng Anh</b></span>
+      <span class="koc-chip"><b>Táo</b></span>
+      <span class="koc-chip"><b>Veeboong</b> · 367.9K</span>
+      <span class="koc-chip"><b>Nguyễn Hữu Trí</b></span>
+      <span class="koc-chip"><b>Huỳnh Duy Khương</b></span>
+      <span class="koc-chip"><b>Lê Anh Nuôi</b></span>
+      <span class="koc-chip"><b>Blingbabi</b></span>
+      <span class="koc-chip"><b>Hà Cooking</b></span>
+      <span class="koc-chip"><b>Hoàng Thị Thu Trà</b> · 210.6K</span>
+    </div>
+  </div>
+  <div class="wrap" style="padding-top:clamp(48px,6vw,80px)">
+    <p class="eyebrow rv" style="margin-bottom:26px" data-i18n="ben.eyebrow">Quyền lợi khi hợp tác livestream</p>
+    <div class="ben-grid rv">
+      <div class="ben">
+        <span class="ben-n">01</span>
+        <h4 data-i18n="ben1.h">Bảo trợ truyền thông</h4>
+        <p data-i18n="ben1.p">Gắn thương hiệu dưới bảo trợ truyền thông của VTVcab. VTVcab bảo vệ hình ảnh thương hiệu và không đăng thông tin tiêu cực hoặc sai lệch.</p>
+      </div>
+      <div class="ben">
+        <span class="ben-n">02</span>
+        <h4 data-i18n="ben2.h">Tối ưu chi phí</h4>
+        <p data-i18n="ben2.p">Hỗ trợ booking đa nền tảng, review từ KOL/KOC và quảng bá sản phẩm với mức chi phí tốt nhất.</p>
+      </div>
+      <div class="ben">
+        <span class="ben-n">03</span>
+        <h4 data-i18n="ben3.h">Tăng độ uy tín</h4>
+        <p data-i18n="ben3.p">Nâng độ tin cậy của thương hiệu thông qua mạng lưới uy tín và có sức ảnh hưởng của VTVcab.</p>
+      </div>
+      <div class="ben">
+        <span class="ben-n">04</span>
+        <h4 data-i18n="ben4.h">Hỗ trợ đồng hành</h4>
+        <p data-i18n="ben4.p">Hỗ trợ tích hợp giỏ sản phẩm trên các kênh livestream của VTVcab* và hỗ trợ sử dụng ấn phẩm quảng cáo**.</p>
+      </div>
+    </div>
+    <p class="foot-note rv" data-i18n="ben.note">* Sản phẩm phải đạt đánh giá từ 4.5 sao trở lên &nbsp;&nbsp; ** Miễn phí tháng đầu tiên</p>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">05 — Work Process</p>
+        <h2 class="h-display" data-i18n="proc.h2">Bốn bước, không có bước nào là hộp đen.</h2>
+      </div>
+      <p data-i18n="proc.lede">Mỗi giai đoạn có đầu ra rõ ràng và người chịu trách nhiệm cụ thể. Bạn biết chiến dịch đang ở đâu tại mọi thời điểm.</p>
+    </div>
+    <div class="proc rv">
+      <div class="step">
+        <span class="step-n">01</span>
+        <h4 data-i18n="pr1.h">Tư vấn &amp; phân tích nhu cầu</h4>
+        <p data-i18n="pr1.p">Hiểu mục tiêu và yêu cầu thực sự của khách hàng trước khi đề xuất bất cứ điều gì.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">02</span>
+        <h4 data-i18n="pr2.h">Xây dựng chiến lược</h4>
+        <p data-i18n="pr2.p">Thiết kế chiến lược nội dung và truyền thông riêng, triển khai theo kế hoạch đã tối ưu.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">03</span>
+        <h4 data-i18n="pr3.h">Theo dõi &amp; tối ưu</h4>
+        <p data-i18n="pr3.p">Giám sát và điều chỉnh chiến dịch liên tục để đẩy hiệu quả lên cao nhất.</p>
+      </div>
+      <div class="step">
+        <span class="step-n">04</span>
+        <h4 data-i18n="pr4.h">Báo cáo &amp; đánh giá</h4>
+        <p data-i18n="pr4.p">Báo cáo chi tiết và đánh giá thẳng thắn về hiệu quả chiến dịch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">06 — Highlight Projects</p>
+        <h2 class="h-display" data-i18n="work.h2">Kết quả đo bằng doanh thu, không bằng lượt thích.</h2>
+      </div>
+      <p data-i18n="work.lede">GMV thực tế trên mỗi video từ các chiến dịch affiliate và livestream đã triển khai.</p>
+    </div>
+    <div class="gmv-grid rv">
+      <div class="gmv">
+        <span class="gmv-when">09/2023</span>
+        <div class="gmv-v">711.9M</div>
+        <p class="gmv-u" data-i18n="gmv.u1">VNĐ GMV / video</p>
+        <span class="gmv-views">4.8M views</span>
+      </div>
+      <div class="gmv">
+        <span class="gmv-when">09/2023</span>
+        <div class="gmv-v">456.2M</div>
+        <p class="gmv-u" data-i18n="gmv.u2">VNĐ GMV / video</p>
+        <span class="gmv-views">4.0M views</span>
+      </div>
+      <div class="gmv">
+        <span class="gmv-when">09/2023</span>
+        <div class="gmv-v">205.4M</div>
+        <p class="gmv-u" data-i18n="gmv.u3">VNĐ GMV / video</p>
+        <span class="gmv-views">5.0M views</span>
+      </div>
+      <div class="gmv">
+        <span class="gmv-when">03/2024</span>
+        <div class="gmv-v">84.0M</div>
+        <p class="gmv-u" data-i18n="gmv.u4">VNĐ GMV / video</p>
+        <span class="gmv-views">344.3K views</span>
+      </div>
+      <div class="gmv">
+        <span class="gmv-when">02/2024</span>
+        <div class="gmv-v">76.8M</div>
+        <p class="gmv-u" data-i18n="gmv.u5">VNĐ GMV / video</p>
+        <span class="gmv-views">5.0M views</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div>
+        <p class="eyebrow">07 — FAQ</p>
+        <h2 class="h-display" data-i18n="faq.h2">Câu hỏi thường gặp.</h2>
+      </div>
+      <p data-i18n="faq.lede">Những điều khách hàng hỏi chúng tôi nhiều nhất trước khi bắt đầu.</p>
+    </div>
+    <div class="rv">
+      <div class="faq-item" data-open="false">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span data-i18n="f1.q">Chicmedia làm những dịch vụ gì?</span><span class="faq-mark">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><p data-i18n="f1.a">Chicmedia cung cấp giải pháp truyền thông marketing toàn diện: branding, social media, performance marketing, PR đa kênh, livestream và affiliate, sản xuất video, cho thuê studio, booking KOL/KOC và tiếp cận mạng lưới VTVcab. Ngoài ra chúng tôi vận hành hệ sinh thái sản phẩm riêng gồm Chicgo, Checkevent, Chicstay, Chiko và Chichouse.</p></div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span data-i18n="f2.q">Điều gì khiến Chicmedia khác các agency khác?</span><span class="faq-mark">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><p data-i18n="f2.a">Bốn điểm: chúng tôi là đối tác chiến lược chính thức của VTVcab với quyền tiếp cận một mạng lưới truyền thông mạnh; chúng tôi làm trọn gói từ chiến lược đến thực thi trong một nhà; chúng tôi có studio riêng với thiết bị hiện đại; và chúng tôi sở hữu mạng lưới hơn 500 KOC in-house trải rộng nhiều ngành hàng.</p></div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span data-i18n="f3.q">Chi phí một dự án được tính thế nào?</span><span class="faq-mark">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><p data-i18n="f3.a">Sau buổi tư vấn và phân tích nhu cầu, chúng tôi đề xuất mô hình hợp tác phù hợp — theo dự án, theo gói cố định hoặc theo tháng — kèm timeline và chi phí dự kiến. Ngân sách được thiết kế theo mục tiêu của bạn, không theo bảng giá cứng.</p></div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span data-i18n="f4.q">Chicmedia có làm việc với startup không?</span><span class="faq-mark">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><p data-i18n="f4.a">Có. Chúng tôi làm với cả doanh nghiệp lớn lẫn startup. Bản thân Chicmedia đang vận hành năm sản phẩm ở giai đoạn đầu, nên chúng tôi hiểu bài toán nguồn lực hạn chế và nhu cầu chứng minh kết quả nhanh.</p></div></div>
+      </div>
+      <div class="faq-item" data-open="false">
+        <button class="faq-q" type="button" aria-expanded="false">
+          <span data-i18n="f5.q">Đội ngũ của Chicmedia gồm những ai?</span><span class="faq-mark">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-in"><p data-i18n="f5.a">Chicmedia có đội ngũ chuyên gia nhiều năm kinh nghiệm trong ngành truyền thông và marketing, gồm Ban lãnh đạo, Media Planner, Production Team, Content Creator và Digital Marketing. Cơ cấu vận hành theo năm khối: Marketing, Communications, Creative, Livestream và Operations.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="contact">
+  <div class="talk rv">
+    <p class="eyebrow" style="color:rgba(8,8,10,.45)">08 — Let's Talk</p>
+    <h2 class="h-display" data-i18n="talk.h2">Kể cho chúng tôi nghe về chiến dịch của bạn.</h2>
+    <p class="talk-sub" data-i18n="talk.sub">Gửi vài dòng về mục tiêu và ngân sách. Đội Chicmedia phản hồi trong 24 giờ làm việc.</p>
+    <div class="talk-links">
+      <a class="talk-link" href="mailto:contact@chicmedia.vn">contact@chicmedia.vn</a>
+      <a class="talk-link" href="tel:+84934671131">0934 671 131</a>
+      <a class="talk-link" href="https://chicmedia.vn" target="_blank" rel="noopener">chicmedia.vn</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+
+      <div>
+        <h5>About us</h5>
+        <p class="legal-name">CÔNG TY CỔ PHẦN TRUYỀN THÔNG VÀ GIẢI TRÍ CHICMEDIA</p>
+        <p class="legal-en">Chicmedia Communication &amp; Entertainment Joint Stock Company</p>
+        <dl>
+          <div class="legal-row">
+            <dt data-i18n="lg.tax">Mã số thuế</dt>
+            <dd>0110932598</dd>
+          </div>
+          <div class="legal-row">
+            <dt data-i18n="lg.addr">Địa chỉ thuế</dt>
+            <dd>Tầng 1, Tòa nhà Web3, số 4 phố Duy Tân, P. Dịch Vọng Hậu, Q. Cầu Giấy, Hà Nội</dd>
+          </div>
+          <div class="legal-row">
+            <dt data-i18n="lg.field">Lĩnh vực</dt>
+            <dd data-i18n="lg.field.v">Truyền thông và giải trí</dd>
+          </div>
+          <div class="legal-row">
+            <dt data-i18n="lg.svc">Dịch vụ</dt>
+            <dd data-i18n="lg.svc.v">Lưu trú Chicstay · Sự kiện giải trí Checkevent · Khám phá địa điểm Chicgo</dd>
+          </div>
+          <div class="legal-row">
+            <dt data-i18n="lg.ceo">Giám đốc</dt>
+            <dd>Trần Tuấn Dũng</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.svc">Dịch vụ</h5>
+        <ul class="foot-list">
+          <li><a href="#services">Branding</a></li>
+          <li><a href="#services">Social Media</a></li>
+          <li><a href="#services">Performance Marketing</a></li>
+          <li><a href="#services" data-i18n="ft.pr">PR đa kênh</a></li>
+          <li><a href="#services">Livestream &amp; Affiliate</a></li>
+          <li><a href="#services" data-i18n="ft.vid">Sản xuất video</a></li>
+          <li><a href="#services" data-i18n="ft.stu">Cho thuê studio</a></li>
+          <li><a href="#services">Booking KOL/KOC</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.eco">Hệ sinh thái</h5>
+        <ul class="foot-list">
+          <li><a href="#ecosystem" data-i18n="ft.e1">Chicgo — khám phá địa điểm</a></li>
+          <li><a href="#ecosystem" data-i18n="ft.e2">Checkevent — sự kiện giải trí</a></li>
+          <li><a href="#ecosystem" data-i18n="ft.e3">Chicstay — lưu trú ngắn ngày</a></li>
+          <li><a href="#ecosystem" data-i18n="ft.e4">Chiko — robot dịch vụ AI</a></li>
+          <li><a href="#ecosystem" data-i18n="ft.e5">Chichouse — sản xuất nội dung</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 data-i18n="ft.ct">Liên hệ</h5>
+        <ul class="foot-list">
+          <li><a href="mailto:contact@chicmedia.vn">contact@chicmedia.vn</a></li>
+          <li><a href="tel:+84934671131">0934 671 131</a></li>
+          <li><a href="https://chicmedia.vn" target="_blank" rel="noopener">chicmedia.vn</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="foot-bot">
+      <span>© 2026 Chicmedia JSC</span>
+      <span>Tax ID 0110932598</span>
+      <span>Hà Nội, Việt Nam</span>
+      <span class="push">Creativity for Transformation</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const EN = {
+  'nav.svc':'Services','nav.eco':'Ecosystem','nav.net':'Network','nav.proc':'Process','nav.work':'Work','nav.cta':'Contact',
+
+  'hero.eyebrow':'Chicmedia Communication & Entertainment JSC · Hanoi, Vietnam',
+  'hero.h1':'Chicmedia is an integrated communication agency built for <i>young Vietnam</i>.',
+  'hero.lede':'We connect brands with customers through creative ideas and effective cross-channel media strategies — branding, social, performance, PR, livestream, video production, and our own entertainment product ecosystem.',
+  'hero.cta1':'See our services','hero.cta2':'Product ecosystem',
+
+  'stat.1':'Views generated by the official VTVcab TikTok network in 2024',
+  'stat.2':'Media channels in the system: fanpages, TikTok, YouTube, Zalo OA',
+  'stat.3':'In-house KOLs/KOCs covering every industry and product category',
+  'stat.4':'MCN on Shopee and TikTok in the Vietnamese market',
+  'stat.note':'Source: Chicmedia Company Profile 2025 · Official strategic partner of VTVcab',
+
+  'svc.h2':'Integrated communication, delivered end to end under one roof.',
+  'svc.lede':'Nine service lines, from strategy to execution. No stitching vendors together: strategy, production, distribution and measurement all sit on the same team.',
+
+  's1.name':'Branding',
+  's1.desc':'Comprehensive brand development and positioning. More than a logo and a palette — it is how people recognise and remember you.',
+  's1.l1':'Market research and brand positioning',
+  's1.l2':'Visual identity system and brand voice',
+  's1.l3':'Brand guidelines and asset library',
+  's1.l4':'Brand architecture for multi-product ecosystems',
+
+  's2.name':'Social Media',
+  's2.desc':'Build and run social channels with creative content that drives real interaction, not just impressions.',
+  's2.l1':'TikTok, Facebook, Instagram, YouTube, Zalo OA, Website',
+  's2.l2':'Monthly content plans, production and publishing end to end',
+  's2.l3':'Trend response and turnaround within 24–48 hours',
+  's2.l4':'Community management and crisis handling',
+
+  's3.name':'Performance Marketing',
+  's3.desc':'Data-driven advertising campaigns across multiple platforms, measured by numbers you can verify.',
+  's3.l1':'Meta Ads, TikTok Ads, Google Ads, Shopee Ads',
+  's3.l2':'Tracking setup, dashboards and scheduled reporting',
+  's3.l3':'Creative A/B testing and weekly budget optimisation',
+  's3.l4':'Funnel optimisation from impression to conversion and revenue',
+
+  's4.name':'PR &amp; Multi-channel Press',
+  's4.desc':'Professional PR strategy that lifts brand image and delivers your message to the right audience.',
+  's4.l1':'Multi-channel press PR services',
+  's4.l2':'Access to the VTVcab channel system as a strategic partner',
+  's4.l3':'Press releases, interviews and feature series',
+  's4.l4':'Brand image protection and misinformation response',
+
+  's5.name':'Livestream &amp; Affiliate',
+  's5.desc':'Strategy and execution of professional livestream sales on e-commerce platforms. Strongest in technology, home appliances, and mom &amp; baby.',
+  's5.l1':'Affiliate management and optimisation on TikTok Shop and Shopee',
+  's5.l2':'Scripting, host and technical coordination for every session',
+  's5.l3':'Training and team development for brands',
+  's5.l4':'Top 3 MCN on Shopee and TikTok',
+
+  's6.name':'Video Production',
+  's6.desc':'In-house creative and production team, modern equipment, professional workflow. From concept to final cut.',
+  's6.l1':'TVCs, corporate films, podcasts, talk shows',
+  's6.l2':'Short-form video for TikTok, Reels, Shorts',
+  's6.l3':'Full channel building for brands',
+  's6.l4':'Concept development, shooting and post-production',
+
+  's7.name':'Studio Rental',
+  's7.desc':'A studio system fully equipped with filming gear, lighting, audio, stable connectivity and professional operating staff.',
+  's7.l1':'Professional studio with modern facilities',
+  's7.l2':'All-in-one solutions from concept to production',
+  's7.l3':'Flexible space suitable for various livestream needs',
+  's7.l4':'Product photography and video optimised for Shopee, Lazada, TikTok',
+
+  's8.name':'KOL/KOC Booking',
+  's8.desc':'A network of over 500 in-house KOCs/KOLs, suitable for all industries, sectors and product categories.',
+  's8.l1':'Connect brands with the right KOC network',
+  's8.l2':'In-house KOCs: Veeboong 367.9K, Thu Trà 210.6K followers',
+  's8.l3':'Review booking, seeding and livestream sessions',
+  's8.l4':'Training and developing new faces',
+
+  's9.name':'VTVcab Network',
+  's9.desc':'Chicmedia is an official strategic partner of VTVcab. Deliver your message to a wide target audience at optimised cost.',
+  's9.l1':'13 news &amp; entertainment pages — 12 million followers',
+  's9.l2':'06 channels in the system — 2.6 million subscribers, 30 million views/month',
+  's9.l3':'Over 400 MCN accounts — ~14 million followers, 30 billion hashtag views',
+  's9.l4':'VTVcab - News 1.3 million and VTVcab 722K followers',
+
+  'eco.h2':'Five products we own outright.',
+  'eco.lede':'Chicmedia does not only run campaigns on other people\u2019s channels. We build our own — five products serving one audience: urban young Vietnam.',
+
+  'p1.tag':'App · Place discovery',
+  'p1.desc':'An AI place-discovery app. It answers the hardest question young people ask: where do we go tonight?',
+  'p1.l1':'Recommendations by mood, budget and distance',
+  'p1.l2':'Builds a full itinerary from a single question',
+  'p1.l3':'Hidden-gems map of places before the crowds',
+  'p1.l4':'Every venue verified by the BD team before it goes live',
+
+  'p2.tag':'Platform · Entertainment events',
+  'p2.desc':'An event discovery and ticketing platform: concerts, live music, workshops, weekend markets.',
+  'p2.l1':'City-by-city event calendar, updated daily',
+  'p2.l2':'Ticket drop alerts and early reservations',
+  'p2.l3':'Ticketing and check-in tools for organisers',
+  'p2.l4':'Bundled media packages for events',
+
+  'p3.tag':'Platform · Accommodation',
+  'p3.desc':'Booking for short trips: homestays, hotels, camping, group villas.',
+  'p3.l1':'Last-minute booking near where you already are',
+  'p3.l2':'Stay + event bundles with Checkevent',
+  'p3.l3':'Curated stays with real photos',
+  'p3.l4':'Built for friend groups and couples',
+
+  'p4.tag':'Hardware · AI service robots',
+  'p4.desc':'AI service robots for restaurants, cafés, hotels and hospitals. Built for venues short on floor staff.',
+  'p4.l1':'Serving, guiding and bussing on automated routes',
+  'p4.l2':'Vietnamese voice interaction',
+  'p4.l3':'Installation, map training and on-site maintenance',
+  'p4.l4':'For F&amp;B chains and B2B distributors',
+
+  'p5.tag':'Team · Content production',
+  'p5.desc':'Our content production and talent development house. Where the whole ecosystem\u2019s story gets told.',
+  'p5.l1':'Short-form video for TikTok, Reels, Shorts',
+  'p5.l2':'Training and developing hosts, MCs and KOCs',
+  'p5.l3':'Full channel operations for brands',
+  'p5.l4':'Production for partners outside the ecosystem',
+
+  'koc.h2':'Over 500 faces, across every category.',
+  'koc.lede':'An in-house KOC/KOL network managed and trained by Chicmedia. Pick the right person, not the most expensive one.',
+  'ben.eyebrow':'Livestream partnership benefits',
+  'ben1.h':'Media sponsorship',
+  'ben1.p':'Branding under the media sponsorship of VTVcab. VTVcab protects brand image and avoids publishing negative or misleading information.',
+  'ben2.h':'Cost optimisation',
+  'ben2.p':'Support with multi-platform booking, KOL/KOC reviews, and product promotion at the best possible cost.',
+  'ben3.h':'Credibility boost',
+  'ben3.p':'Enhance brand credibility through the reputable and influential VTVcab network.',
+  'ben4.h':'Partnership support',
+  'ben4.p':'Support for product cart integration on VTVcab\u2019s livestream channels* and support for using ad visuals**.',
+  'ben.note':'* Product must have a rating of 4.5 stars or higher &nbsp;&nbsp; ** Free for the first month',
+
+  'proc.h2':'Four steps, none of them a black box.',
+  'proc.lede':'Every stage has a defined output and a named owner. You know where the campaign stands at any moment.',
+  'pr1.h':'Consultation &amp; needs analysis',
+  'pr1.p':'Understand the customer\u2019s real goals and requirements before proposing anything.',
+  'pr2.h':'Strategy development',
+  'pr2.p':'Develop tailored content and media strategies, then execute against an optimised plan.',
+  'pr3.h':'Monitoring &amp; optimisation',
+  'pr3.p':'Track and adjust the campaign continuously to maximise effectiveness.',
+  'pr4.h':'Reporting &amp; evaluation',
+  'pr4.p':'Detailed reports and a straight evaluation of campaign performance.',
+
+  'work.h2':'Results measured in revenue, not likes.',
+  'work.lede':'Actual GMV per video from affiliate and livestream campaigns we have delivered.',
+  'gmv.u1':'VND GMV / video','gmv.u2':'VND GMV / video','gmv.u3':'VND GMV / video','gmv.u4':'VND GMV / video','gmv.u5':'VND GMV / video',
+
+  'faq.h2':'Frequently asked questions.',
+  'faq.lede':'What clients ask us most before we start.',
+  'f1.q':'What services does Chicmedia offer?',
+  'f1.a':'Chicmedia provides comprehensive marketing communication solutions: branding, social media, performance marketing, multi-channel PR, livestream and affiliate, video production, studio rental, KOL/KOC booking, and access to the VTVcab network. We also operate our own product ecosystem: Chicgo, Checkevent, Chicstay, Chiko and Chichouse.',
+  'f2.q':'What separates Chicmedia from other agencies?',
+  'f2.a':'Four things: we are an official strategic partner of VTVcab with exclusive access to a powerful media network; we deliver integrated solutions from strategy to execution in one place; we own a professional studio with modern facilities; and we run an extensive network of 500+ in-house KOCs across industries.',
+  'f3.q':'How is a project priced?',
+  'f3.a':'After a consultation and needs analysis, we recommend the engagement model that fits — project-based, fixed fee, or retainer — along with a timeline and estimated cost. Budgets are shaped around your goals, not a fixed rate card.',
+  'f4.q':'Do you work with startups?',
+  'f4.a':'Yes. We work with both enterprises and startups. Chicmedia itself runs five early-stage products, so we understand tight resources and the need to prove results quickly.',
+  'f5.q':'Who is on the Chicmedia team?',
+  'f5.a':'Chicmedia has a team of seasoned media and marketing experts: Leadership, Media Planner, Production Team, Content Creator, and Digital Marketing. Operations run across five functions: Marketing, Communications, Creative, Livestream and Operations.',
+
+  'talk.h2':'Tell us about your campaign.',
+  'talk.sub':'Send us a few lines on your goals and budget. The Chicmedia team replies within 24 business hours.',
+
+  'lg.tax':'Tax ID','lg.addr':'Registered address','lg.field':'Industry','lg.field.v':'Communication and entertainment',
+  'lg.svc':'Services','lg.svc.v':'Chicstay accommodation · Checkevent entertainment events · Chicgo place discovery',
+  'lg.ceo':'CEO',
+  'ft.svc':'Services','ft.pr':'Multi-channel PR','ft.vid':'Video production','ft.stu':'Studio rental',
+  'ft.eco':'Ecosystem','ft.ct':'Contact',
+  'ft.e1':'Chicgo — place discovery','ft.e2':'Checkevent — entertainment events','ft.e3':'Chicstay — short stays',
+  'ft.e4':'Chiko — AI service robots','ft.e5':'Chichouse — content production'
+};
+
+const VI = {};
+document.querySelectorAll('[data-i18n]').forEach(function(el){ VI[el.dataset.i18n] = el.innerHTML; });
+
+function setLang(lang){
+  var dict = lang === 'en' ? EN : VI;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var v = dict[el.dataset.i18n];
+    if (v !== undefined) el.innerHTML = v;
+  });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  });
+}
+document.querySelectorAll('.lang button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.dataset.lang); });
+});
+
+document.querySelectorAll('.row').forEach(function(row){
+  var btn = row.querySelector('.row-btn');
+  btn.addEventListener('click', function(){
+    var open = row.dataset.open === 'true';
+    document.querySelectorAll('.row').forEach(function(r){
+      r.dataset.open = 'false';
+      r.querySelector('.row-btn').setAttribute('aria-expanded','false');
+    });
+    if (!open){ row.dataset.open = 'true'; btn.setAttribute('aria-expanded','true'); }
+  });
+});
+
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var btn = item.querySelector('.faq-q');
+  btn.addEventListener('click', function(){
+    var open = item.dataset.open === 'true';
+    item.dataset.open = open ? 'false' : 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+  });
+});
+
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+
+var firstRow = document.querySelector('.row');
+if (firstRow){ firstRow.dataset.open = 'true'; firstRow.querySelector('.row-btn').setAttribute('aria-expanded','true'); }
+</script>
+</body>
+</html>
